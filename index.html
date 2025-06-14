@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой личный сайт</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #6e48aa;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #6e48aa;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+
+        a {
+            color: #9d50bb;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        .profile-image {
+            width: 795px;
+            height: 620px;
+            object-fit: cover;
+            border: 2px solid white;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Серегин Марк</h1>
+            <p>Веб-разработчик</p>
+        </div>
+    </header>
+    <img src="image.jpg" class="profile-image">
+    <div class="container">
+        <section id="about">
+            <h2>Обо мне</h2>
+            <p>Привет! Я веб-разработчик. Специализируюсь на фронтенд-разработке с использованием HTML, CSS и Python.</p>
+            <p>В свободное время люблю изучать новые технологии, языки программировния и новые библиотеки в Python.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Мои навыки</h2>
+            <div class="skills">
+                <span class="skill">HTML5</span>
+                <span class="skill">CSS3</span>
+                <span class="skill">Python</span>
+                <span class="skill">Git</span>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Контакты</h2>
+            <p>Email: <a href="mailto:ivan@example.com">sereginmark0@gmail.com</a></p>
+            <p>Телефон: +7 (927) 727-31-03</p>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Серегин Марк. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
