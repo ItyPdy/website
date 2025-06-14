@@ -3,126 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой личный сайт</title>
+    <title>Дед Мороз</title>
     <style>
-        /* Основные стили */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
             color: #333;
-            background-color: #f9f9f9;
+            overflow-x: hidden;
         }
 
-        header {
-            background: linear-gradient(135deg, #6e48aa 0%, #9d50bb 100%);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
         }
 
-        .container {
-            max-width: 800px;
+        .main-photo {
+            width: 60%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 1s ease;
+        }
+
+        .main-photo.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .description {
+            min-height: 100vh;
+            padding: 100px 20px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            position: relative;
+        }
+
+        .desc-left, .desc-right {
+            position: absolute;
+            width: 40%;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .desc-left {
+            left: 5%;
+            top: 200px;
+            transition-delay: 0.2s;
+        }
+
+        .desc-right {
+            right: 5%;
+            top: 400px;
+            transition-delay: 0.4s;
+        }
+
+        .desc-left.active, .desc-right.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h1 {
-            margin: 0;
-            font-size: 2.5rem;
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            color: #6e48aa;
         }
 
         h2 {
-            color: #6e48aa;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-
-        section {
-            background: white;
-            margin: 20px 0;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill {
-            background: #6e48aa;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-        }
-
-        a {
             color: #9d50bb;
-            text-decoration: none;
+            margin-bottom: 20px;
         }
 
-        a:hover {
-            text-decoration: underline;
-        }
-        .profile-image {
-            width: 795px;
-            height: 620px;
-            object-fit: cover;
-            border: 2px solid white;
-            margin: 20px auto;
-            display: block;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Серегин Марк</h1>
-            <p>Веб-разработчик</p>
+    <section class="hero">
+        <img src="image.jpg" class="main-photo" id="main-photo">
+    </section>
+
+    <section class="description">
+        <h1>Кто это?</h1>
+
+        <div class="desc-left" id="desc-left">
+            <h2>Марк</h2>
+            <p>Возраст: 15 лет</p>
+            <p>Изучает Python и верстку сайтов</p>
         </div>
-    </header>
-    <img src="image.jpg" class="profile-image">
-    <div class="container">
-        <section id="about">
-            <h2>Обо мне</h2>
-            <p>Привет! Я веб-разработчик. Специализируюсь на фронтенд-разработке с использованием HTML, CSS и Python.</p>
-            <p>В свободное время люблю изучать новые технологии, языки программировния и новые библиотеки в Python.</p>
-        </section>
 
-        <section id="skills">
-            <h2>Мои навыки</h2>
-            <div class="skills">
-                <span class="skill">HTML5</span>
-                <span class="skill">CSS3</span>
-                <span class="skill">Python</span>
-                <span class="skill">Git</span>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Контакты</h2>
-            <p>Email: <a href="mailto:ivan@example.com">sereginmark0@gmail.com</a></p>
-            <p>Телефон: +7 (927) 727-31-03</p>
-        </section>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>© 2025 Серегин Марк. Все права защищены.</p>
+        <div class="desc-right" id="desc-right">
+            <h2>Иван</h2>
+            <p>Возраст: 78 лет</p>
+            <p>Профессиональный водитель</p>
+            <p>Стаж: 60 лет</p>
         </div>
-    </footer>
+    </section>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            const mainPhoto = document.getElementById('main-photo');
+            if (scrollPosition > windowHeight * 0.1) {
+                mainPhoto.classList.add('active');
+            }
+
+            const descLeft = document.getElementById('desc-left');
+            const descRight = document.getElementById('desc-right');
+
+            if (scrollPosition > windowHeight * 0.5) {
+                descLeft.classList.add('active');
+            }
+
+            if (scrollPosition > windowHeight * 0.7) {
+                descRight.classList.add('active');
+            }
+        });
+
+        window.addEventListener('load', function() {
+            if (window.scrollY > 0) {
+                window.dispatchEvent(new Event('scroll'));
+            }
+        });
+    </script>
 </body>
 </html>
